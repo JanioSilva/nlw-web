@@ -43,14 +43,20 @@ export function CreateAdModal() {
                   <Select.Icon className="float-right" />
                 </Select.Trigger>
 
-                <Select.Portal className="bg-zinc-900 py-3 px-4 rounded text-sm text-white">
+                <Select.Portal>
                   <Select.Content>
                     <Select.Viewport>
                       {games.map((game) => {
                         return (
-                          <Select.Item key={game.id} value={game.id}>
+                          <Select.Item
+                            key={game.id}
+                            value={game.id}
+                            className="bg-zinc-900 hover:bg-zinc-600 py-3 px-4 text-sm text-white flex items-center"
+                          >
+                            <Select.ItemIndicator>
+                              <Check className=" text-emerald-400 ml-0 mr-1" />
+                            </Select.ItemIndicator>
                             <Select.ItemText>{game.title}</Select.ItemText>
-                            <Select.ItemIndicator />
                           </Select.Item>
                         );
                       })}
